@@ -1,20 +1,25 @@
 import React from 'react';
 import RevenueGraph from './Containers/RevenueGraph';
 import TabWrapper, { Tab } from './Components/TabWrapper';
-import './App.css';
 
-const App = () => (
-  <TabWrapper>
-    <Tab title="Sales Rep">
-      <RevenueGraph userId={203} />
-    </Tab>
-    <Tab title="Manager">
-      <RevenueGraph userId={32} />
-    </Tab>
-    <Tab title="Director">
-      <RevenueGraph userId={2} />
-    </Tab>
-  </TabWrapper>
-);
+const rep = "Sales Rep";
+const manager = "Manager";
+const director = "Director";
+
+const App = () => {
+    return (
+        <TabWrapper>
+            <Tab title={rep}>
+                <RevenueGraph userId={203} role={rep} />
+            </Tab>
+            <Tab title={manager}>
+                <RevenueGraph userId={32} role={manager} />
+            </Tab>
+            <Tab title={director}>
+                <RevenueGraph userId={2} role={director} />
+            </Tab>
+        </TabWrapper>
+    );
+};
 
 export default App;

@@ -1,11 +1,9 @@
 import React, { memo } from 'react';
-import PropTypes from 'prop-types';
+import { arrayOf, shape, string, number } from 'prop-types';
 import {
   BarChart, Bar, XAxis, YAxis, Tooltip, Legend,
 } from 'recharts';
 import * as d3 from 'd3';
-
-const { arrayOf, shape } = PropTypes;
 
 function Graph ({ data }) {
   if (!data) {
@@ -30,7 +28,10 @@ function Graph ({ data }) {
 }
 
 Graph.propTypes = {
-  data: arrayOf(shape()),
+  data: arrayOf(shape({
+    name: string,
+    revenue: number
+  })),
 };
 
 export default memo(Graph);

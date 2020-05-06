@@ -19,5 +19,5 @@ import main.views as main
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('revenue/<user_id>', main.get_revenue_by_sales_rep)
+    path('revenue/<role>/<user_id>', main.get_revenue_by_user)
 ]

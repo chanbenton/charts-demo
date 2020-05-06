@@ -1,15 +1,12 @@
 
 const initialState = {
-  revenue: {},
+  data: [],
 };
 
 export const reducer = (state = initialState, action) => {
-  if (action.type === 'LOAD_REVENUE_DATA'){
-    return Object.assign({}, state, {
-      revenue: Object.assign({}, state.revenue,
-        { [action.userId]: action.data }
-      )
-    });
+  if (action.type === 'LOAD_REVENUE_DATA') {
+    const {data} = action;
+    return {...state, data};
   }
   return state;
 };
